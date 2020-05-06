@@ -15,8 +15,8 @@ angular.module('myApp.home', ['ngRoute'])
         $scope.name = "";
         $scope.surname = "";
         $scope.email = "";
-        $scope.user_pk = "";
-        $scope.address = "";
+        $scope.phone_number= "";
+        $scope.username = "";
         $scope.password = "";
         $scope.password_re = "";
 
@@ -25,7 +25,7 @@ angular.module('myApp.home', ['ngRoute'])
         var formdata = "";
 
         $scope.click = function () {
-            var requestUrl = "http://localhost:8080/api/v1/rest/User/user(" + $scope.userIdForSelect + ")";
+            var requestUrl = "http://localhost:8083/api/v1/rest/User/user(" + $scope.userIdForSelect + ")";
             document.getElementById("isa_error").style.visibility = 'hidden';
             $httpClient.get(requestUrl).then(function (response) {
                 console.log(response);
@@ -33,8 +33,8 @@ angular.module('myApp.home', ['ngRoute'])
                     $scope.name = response.data.name;
                     $scope.surname= response.data.surname;
                     $scope.email = response.data.email;
-                    $scope.user_pk= response.data.user_pk;
-                    $scope.address = response.data.address;
+                    $scope.phone_number = response.data.phone_number;
+                    $scope.username= response.data.username;
                 }
                 if(response.data.type === "ERROR"){
                     document.getElementById("isa_error").style.visibility = 'visible';
@@ -52,8 +52,9 @@ angular.module('myApp.home', ['ngRoute'])
                 name: $scope.name,
                 surname: $scope.surname,
                 email: $scope.email,
-                user_pk: $scope.user_pk,
-                address: $scope.address
+                phone_number: $scope.phone_number,
+                username: $scope.username
+
             };
 
             var userCreateRequestDTO = {
@@ -64,7 +65,7 @@ angular.module('myApp.home', ['ngRoute'])
             var submitData = JSON.stringify(userCreateRequestDTO);
             console.log(userCreateRequestDTO);
 
-            $httpClient.post("http://localhost:8080/api/v1/rest/User/user", submitData).then(function (response) {
+            $httpClient.post("http://localhost:8083/api/v1/rest/User/user", submitData).then(function (response) {
                 console.log(response);
             }).catch(function (error) {
                 console.log(error);
