@@ -6,42 +6,74 @@
         </i>
     </div>
 
-    <form id="contact" ng-controller="UserRegisterCtrl" ng-submit="submit()" method="post">
-        <h3>Register</h3>
-        <fieldset>
-            <input id="name" ng-model="name"
-                   placeholder="Your name" type="text" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-            <input id="surname" ng-model="surname"
-                   placeholder="Your Surname" type="text" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-            <input id="email" ng-model="email"
-                   placeholder="Your Email" type="email" tabindex="4" required>
-        </fieldset>
-        <fieldset>
-            <input id="phone_number" ng-model="phone_number"
-                   placeholder="Your Personal pk" type="text" tabindex="3" required>
-        </fieldset>
-        <fieldset>
-            <input id="username" ng-model="username"
-                   placeholder="Your address" type="text" tabindex="4" required>
-        </fieldset>
-        <fieldset>
-            <input id="password" ng-model="password"
-                   placeholder="password" type="password" tabindex="4" required>
-        </fieldset>
-        <fieldset>
-            <input id="password_re" ng-model="password_re"
-                   placeholder="retype password" type="password" tabindex="4" required>
-        </fieldset>
+    <!--page title section-->
+    <section class="inner_cover parallax-window" data-parallax="scroll" data-image-src="assets/img/bg/bg-img.png">
+        <div class="overlay_dark"></div>
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-6">
+                    <div class="inner_cover_content">
+                        <h3>
+                            Registration form
+                        </h3>
+                        <div class="card-body">
+                        </div>
 
-        <fieldset>
-            <button name="submit" type="submit" id="contact-submit"
-                    data-submit="...Sending">Submit
-            </button>
-        </fieldset>
-    </form>
+                        <div class="form-group">
+                            <form id="contact" ng-controller="UserRegisterCtrl" ng-submit="submit()" method="post">
+                                <div class="form-group">
+                                    <input ng-model="name" type="text" class="form-control" placeholder="name" required minlength="2"
+                                           maxlength="50">
+                                </div>
+                                <div class="form-group">
+                                    <input id="surname" ng-model="surname" type="text" class="form-control" placeholder="surname" required minlength="2"
+                                           maxlength="50">
+                                </div>
+                                <div class="form-group">
+                                    <input id="email" ng-model="email" type="email" class="form-control" placeholder="email" required
+                                           maxlength="100">
+                                </div>
+                                <div class="form-group">
+                                    <input id="email_re" ng-model="email_re" type="email" class="form-control" placeholder="retype email" required
+                                           maxlength="100">
+                                </div>
+                                <div class="form-group">
+                                    <input id="phone_number" ng-model="phone_number" type="text" class="form-control" placeholder="phone number" required
+                                           minlength="8"
+                                           maxlength="20">
+                                </div>
+                                <div class="form-group">
+                                    <input id="username" ng-model="username" type="text" class="form-control" placeholder="username" required
+                                           minlength="2"
+                                           maxlength="50">
+                                </div>
+                                <div class="form-group">
+                                    <input id="password" ng-model="password" type="password" class="form-control" placeholder="password" required
+                                           minlength="6"
+                                           maxlength="50">
+                                </div>
+                                <div class="form-group">
+                                    <input id="password_re" ng-model="password_re" type="password" class="form-control" placeholder="retype password" required
+                                           minlength="6" maxlength="50">
+                                </div>
+
+                                <div class="form-group text-right">
+                                    <button class="btn btn-rounded btn-primary" onclick="goBack()"> Go Back</button>
+                                    <span class="form-group text-right">
+                            <button class="btn btn-rounded btn-primary" type="submit">Register</button>
+                            </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 </div>

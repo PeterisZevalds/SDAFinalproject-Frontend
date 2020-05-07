@@ -2,9 +2,9 @@
 
 angular.module('myApp.home', ['ngRoute'])
 
-    .config(['$routeProvider', function ($routeProvider) {
+    .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/home', {
-            templateUrl: 'home/home.html',
+            templateUrl: 'viewHome/home.html',
             controller: 'HomeCtrl'
         });
     }])
@@ -95,10 +95,10 @@ var sha256 = function sha256(ascii) {
     // Round constants: first 32 bits of the fractional parts of the cube roots of the first 64 primes
     var k = sha256.k = sha256.k || [];
     var primeCounter = k[lengthProperty];
-    /*/
+    /!*!/
     var hash = [], k = [];
     var primeCounter = 0;
-    //*/
+    //!*/
 
     var isComposite = {};
     for (var candidate = 2; primeCounter < 64; candidate++) {
